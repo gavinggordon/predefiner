@@ -1,0 +1,35 @@
+{
+  "name": "gavinggordon/configit",
+  "type": "library",
+  "description": "A simple package to quickly and dynamically set PHP constants.",
+  "keywords": [
+    "PHP",
+    "constants",
+    "config",
+	"setting"
+  ],
+  "homepage": "http://configit.gavingordon.com",
+  "support": {
+    "issues": "https://github.com/gavinggordon/Configit/issues",
+    "source": "https://github.com/gavinggordon/Configit"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gavin G Gordon",
+      "email": "me@gavingordon.com",
+      "homepage": "https://gavingordon.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0|~5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Configit\\": "src/Configit/"
+    }
+  }
+}
