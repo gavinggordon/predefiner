@@ -1,8 +1,8 @@
 <?php
 
-namespace Configit;
+namespace Predefiner;
 
-class Configit
+class Predefiner
 {
 
 	private $userappconfig;
