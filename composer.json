@@ -1,17 +1,18 @@
 {
-  "name": "gavinggordon/configit",
+  "name": "gavinggordon/predefiner",
   "type": "library",
   "description": "A simple package to quickly and dynamically set PHP constants.",
   "keywords": [
     "PHP",
     "constants",
-    "config",
+    "environment",
+	"predefined",
 	"setting"
   ],
-  "homepage": "http://configit.gavingordon.com",
+  "homepage": "http://predefiner.gavingordon.com",
   "support": {
-    "issues": "https://github.com/gavinggordon/Configit/issues",
-    "source": "https://github.com/gavinggordon/Configit"
+    "issues": "https://github.com/gavinggordon/Predefiner/issues",
+    "source": "https://github.com/gavinggordon/Predefiner"
   },
   "license": "MIT",
   "authors": [
@@ -26,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Configit\\": "src/Configit/"
+      "Predefiner\\": "src/Predefiner/"
     },
 	"files": [
 		"lib/def.php"
