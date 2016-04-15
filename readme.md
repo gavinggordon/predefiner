@@ -13,6 +13,12 @@ This class (GGG\Config\Predefiner) is a simple package to quickly and dynamicall
 #### Instantiation:
 
 	include_once( __DIR__ . '/vendor/autoload.php' );
+	$predefiner = new \GGG\Config\Predefiner();
 
 #### Setting:
 
+	$predefiner->set( ['API_KEY' => 'abc123def456hij789klm0'] );
+	
+	echo API_KEY;
+	// Result: 'abc123def456hij789klm0';
+	
