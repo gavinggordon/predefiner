@@ -1,6 +1,6 @@
 <?php
 
 return array(
-	'DS' => DIRECTORY_SEPARATOR,
-	'PS' => PATH_SEPARATOR,
+	'DS' => 'DIRECTORY_SEPARATOR',
+	'PS' => 'PATH_SEPARATOR',
 );

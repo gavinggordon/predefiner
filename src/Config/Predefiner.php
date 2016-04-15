@@ -1,6 +1,6 @@
 <?php
 
-namespace Predefiner;
+namespace Config;
 
 class Predefiner
 {

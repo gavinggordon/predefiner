@@ -1,19 +1,27 @@
 {
   "name": "gavinggordon/predefiner",
-  "type": "library",
   "description": "A simple package to quickly and dynamically set PHP constants.",
   "keywords": [
-    "PHP",
+    "php",
     "constants",
     "environment",
 	"predefined",
-	"setting"
+	"setting",
+	"setup"
   ],
+  "version": "1.0.0",
+  "minimum-stability": "stable",
   "homepage": "http://predefiner.gavingordon.com",
   "support": {
-    "issues": "https://github.com/gavinggordon/Predefiner/issues",
-    "source": "https://github.com/gavinggordon/Predefiner"
+    "issues": "https://github.com/gavinggordon/predefiner/issues",
+    "source": "https://github.com/gavinggordon/predefiner"
   },
+  "repositories": [
+    {
+	  "type": "git",
+	  "url": "https://github.com/gavinggordon/predefiner.git"
+	}
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -22,12 +30,13 @@
       "homepage": "https://gavingordon.com"
     }
   ],
-  "require": {
-    "php": ">=5.5.0"
+  "require": {},
+  "require-dev": {
+	"phpunit/phpunit": "4.0.*"
   },
   "autoload": {
     "psr-4": {
-      "Predefiner\\": "src/Predefiner/"
+      "GGG\\Config\\": "src/"
     },
 	"files": [
 		"lib/def.php"
