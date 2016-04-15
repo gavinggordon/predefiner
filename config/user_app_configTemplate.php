@@ -2,5 +2,5 @@
 
 return array(
 	'DS' => 'DIRECTORY_SEPARATOR',
-	'PS' => 'PATH_SEPARATOR',
+	'PS' => 'PATH_SEPARATOR'
 );
