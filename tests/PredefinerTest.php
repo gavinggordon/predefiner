@@ -10,7 +10,7 @@ class PredefinerTest extends \PHPUnit_Framework_TestCase
 	public function __construct()
 	{
 		$this->predefiner = new Predefiner();
-		$this->asserFileExists( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php' );
+		$this->assertFileExists( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php' );
 	}
 
 	public function testSet()
