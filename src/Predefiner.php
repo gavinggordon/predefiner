@@ -17,7 +17,7 @@ class Predefiner
 		return $this;
 	}
 	
-	public function set( $settings = array() )
+	public function set( $settings )
 	{
 		$configarray = require( $this->userappconfig );
 		$this->configarray = array_merge( $configarray, $settings );
@@ -36,7 +36,7 @@ class Predefiner
 			$newfile .= '&apos;' . $const . '&apos; =&gt; &apos;' . $value . '&apos;' . ",\n";
 		}
 		$newfile .= ');' . "\n\n";
-		if( file_put_contents( $this->userappconfig, html_entity_decode( $newfile ) ) ) {
+		if( file_put_contents( $this->userappconfig, htmlspecialchars_decode( $newfile, ENT_QUOTES ) ) ) {
 			return true;
 		} else {
 			return false;
