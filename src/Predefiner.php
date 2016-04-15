@@ -1,6 +1,6 @@
 <?php
 
-namespace Config;
+namespace GGG\Config;
 
 class Predefiner
 {
