@@ -13,7 +13,6 @@ class Predefiner
 		if( file_exists( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php' ) ) {
 			$this->userappconfig = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php';
 		}
-		//$this->configarray = array();
 		return $this;
 	}
 	
@@ -32,11 +31,12 @@ class Predefiner
 	
 	private function build()
 	{
-		$newfile = '&lt;?php ' . "\n\n" . 'return array(' . "\n";
+		$newfile = "&lt;?php\nreturn array(\n\t";
 		foreach( $this->configarray as $index => $value ) {
-			$newfile .= '&apos;' . strtoupper( $index ) . '&apos; =&gt; &apos;' . $value . '&apos;' . "\n";
+			$const = strtoupper( $index );
+			$newfile .= "&apos;$const&apos; =&gt; &apos;$value&apos;,\n";
 		}
-		$newfile .= ');' . "\n";
+		$newfile .= ");\n";
 		if( file_put_contents( $this->userappconfig, html_entity_decode( $newfile ) ) ) {
 			return true;
 		} else {
