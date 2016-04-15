@@ -2,6 +2,7 @@
   "name": "gavinggordon/predefiner",
   "description": "A simple package to quickly and dynamically set PHP constants.",
   "keywords": [
+	"1.0.0",
     "php",
     "constants",
     "environment",

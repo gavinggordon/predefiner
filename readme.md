@@ -19,6 +19,10 @@ This class (GGG\Config\Predefiner) is a simple package to quickly and dynamicall
 
 	$predefiner->set( ['API_KEY' => 'abc123def456hij789klm0'] );
 	
+#### Initializing:
+
+	$predefiner->init();
+	
 	echo API_KEY;
 	// Result: 'abc123def456hij789klm0';
 	
