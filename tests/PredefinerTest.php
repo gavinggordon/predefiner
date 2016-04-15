@@ -9,25 +9,28 @@ class PredefinerTest extends \PHPUnit_Framework_TestCase
 	
 	public function __construct()
 	{
+		$file = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php';
 		$this->predefiner = new Predefiner();
-		$this->assertFileExists( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php' );
+		$this->assertFileExists( $file );
 	}
 
 	public function testSet()
     {
-		$result = $this->predefiner->set( ['TEST_CONST'=>'test'] );
+		$result = $this->predefiner->set( [ 'TEST_CONST' => 'test' ] );
         $this->assertTrue( $result );
     }
 	
-	public function testConstant()
+	public function testInit()
     {
+		$this->predefiner->init();
         $this->assertSame( 'test', TEST_CONST );
     }
 	
 	public function __destruct()
 	{
-		$renewed = "&lt;?php\n\nreturn array(\n\t&apos;DS&apos; =&gt; &apos;DIRECTORY_SEPARATOR&apos;,\n\t&apos;PS&apos; =&gt; &apos;PATH_SEPARATOR&apos;,\n);\n";
-		file_put_contents( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php',  html_entity_decode( $renewed ) );
+		$renewed = '&lt;?php' . "\n\n" . 'return array(' . "\n\t" . '&apos;' . 'DS' . '&apos; =&gt; &apos;' . 'DIRECTORY_SEPARATOR' . '&apos;' . ",\n\t" . '&apos;' . 'PS' . '&apos; =&gt; &apos;' . 'PATH_SEPARATOR' . '&apos;' . ",\n" . ');' . "\n";
+		$file = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php';
+		file_put_contents( $file,  html_entity_decode( $renewed ) );
 	}
 	
 }

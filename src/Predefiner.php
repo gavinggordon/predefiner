@@ -10,8 +10,9 @@ class Predefiner
 	
 	public function __construct()
 	{
-		if( file_exists( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php' ) ) {
-			$this->userappconfig = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php';
+		$file = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'user_app_config.php';
+		if( file_exists( $file ) ) {
+			$this->userappconfig = $file;
 		}
 		return $this;
 	}
@@ -21,22 +22,20 @@ class Predefiner
 		$configarray = require( $this->userappconfig );
 		$this->configarray = array_merge( $configarray, $settings );
 		if( $this->build() ) {
-			if( $this->init() ) {
-				return true;
-			} else {
-				return false;
-			}
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
 	private function build()
 	{
-		$newfile = "&lt;?php\nreturn array(\n\t";
+		$newfile = '&lt;?php' . "\n\n" . 'return array(' . "\n\t";
 		foreach( $this->configarray as $index => $value ) {
 			$const = strtoupper( $index );
-			$newfile .= "&apos;$const&apos; =&gt; &apos;$value&apos;,\n";
+			$newfile .= '&apos;' . $const . '&apos; =&gt; &apos;' . $value . '&apos;' . ",\n";
 		}
-		$newfile .= ");\n";
+		$newfile .= ');' . "\n\n";
 		if( file_put_contents( $this->userappconfig, html_entity_decode( $newfile ) ) ) {
 			return true;
 		} else {
@@ -44,13 +43,9 @@ class Predefiner
 		}
 	}
 	
-	private function init()
+	public function init()
 	{
-		if( def( $this->userappconfig ) ) {
-			return true;
-		} else {
-			return false;
-		}
+		def( $this->userappconfig );
 	}
 	
 }
