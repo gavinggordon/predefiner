@@ -8,7 +8,13 @@
     "environment",
 	"predefined",
 	"setting",
-	"setup"
+	"setup",
+	"configuration",
+	"config",
+	"constant",
+	"definition",
+	"definitions",
+	"define"
   ],
   "version": "1.0.0",
   "minimum-stability": "stable",
@@ -38,9 +44,6 @@
   "autoload": {
     "psr-4": {
       "GGG\\Config\\": "src"
-    },
-	"files": [
-		"lib/def.php"
-	]
+    }
   }
 }
