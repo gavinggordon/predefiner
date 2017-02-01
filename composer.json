@@ -2,9 +2,10 @@
   "name": "gavinggordon/predefiner",
   "description": "A simple package to quickly and dynamically set PHP constants.",
   "keywords": [
-	"1.0.0",
+	"v1.0.0",
     "php",
     "constants",
+    "env",
     "environment",
 	"predefined",
 	"setting",
@@ -43,7 +44,7 @@
   },
   "autoload": {
     "psr-4": {
-      "GGG\\Config\\": "src"
+      "GGG\\Config\\": "src/"
     }
   }
 }
